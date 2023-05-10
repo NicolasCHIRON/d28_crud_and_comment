@@ -24,3 +24,23 @@
     </div>
   </div>
 </div>
+
+</br></br><center>
+  <%= form_tag(gossip_comments_path(@gossip), method: :post) do %>
+
+    <%= label_tag 'Ajouter un commentaire' %></br>
+      </div><%= text_area_tag 'content', nil, placeholder: "Votre commentaire...", rows: 3, cols: 50 %></div>
+    <br/>
+
+    <%= submit_tag "Nouveau commentaire", data: {turbo:false} %>
+
+  <% end %>
+
+</center>
+
+</br>
+<h2> Commentaires déjà publiés </h2>
+
+<% @gossip.comments.reverse_each do |comment| %>
+  <div><%= comment.user.first_name %> <%= comment.user.last_name %> - <%= comment.content %></div>
+<% end %>
