@@ -13,7 +13,7 @@
               <h3> <%= @gossip.title %></h3>
               <p class="font-weight-bold"> <%= @gossip.content %></p>
               <p class="font-weight-bold"> Rédigé par <%= @gossip.user.first_name %> <%= @gossip.user.last_name %> qui habite à <%= @gossip.user.city.name %></p>
-              <p><%= button_to "Plus d'informations sur l'auteur (sa vie, ses rêves, ...)", user_path(@gossip.user) %> </p>
+              <p><%= button_to "Plus d'informations sur l'auteur (sa vie, ses rêves, ...)", user_path(@gossip.user.id), method: :get %> </p>
               <p> Date de création du potin : <%= @gossip.created_at %></p>
               <%= button_to "Editer le potin", edit_gossip_path, method: :get %>
               <%= button_to "Supprimer le potin", gossip_path, form: { data: { turbo_confirm: "Veux-tu supprimer ce potin ?" } }, style:"display: inline;", method: :delete %>
