@@ -12,13 +12,28 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new(title: params['title'], content: params['content'], user_id: User.all.sample.id)
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: User.all.sample.id)
     if @gossip.save
       flash[:notice] = 'Le gossip a bien été créé'
       redirect_to '/'
     else
       flash[:alert] = @gossip.errors.full_messages[0]
       render 'new'
+    end
+  end
+
+  def edit
+    @gossip = Gossip.find(params['id'])
+  end
+
+  def update
+    @gossip = Gossip.find(params['id'])
+    if @gossip.update(params.require(:gossip).permit(:title, :content))
+      flash[:notice] = 'Le gossip a bien été mis à jour'
+      redirect_to @gossip
+    else
+      flash[:alert] = @gossip.errors.full_messages[0]
+      render 'edit'
     end
   end
 end

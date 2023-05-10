@@ -15,6 +15,7 @@
               <p class="font-weight-bold"> Rédigé par <%= @gossip.user.first_name %> <%= @gossip.user.last_name %> qui habite à <%= @gossip.user.city.name %></p>
               <p><%= link_to "Plus d'informations sur l'auteur (sa vie, ses rêves, ...)", user_path(@gossip.user), class:"btn btn-success" %> </p>
               <p> Date de création du potin : <%= @gossip.created_at %></p>
+              <p><%= link_to "Editer le potin", edit_gossip_path, class:"btn btn-success" %> </p>
             </div>
           </div>
         </div>
