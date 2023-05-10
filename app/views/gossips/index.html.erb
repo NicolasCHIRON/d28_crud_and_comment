@@ -14,7 +14,7 @@
 
 
 
-        <% @params.each.with_index do |gossip, index| %>
+        <% @params.reverse_each.with_index do |gossip, index| %>
 
 
           <div class="col-lg-3 col-md-3 col-sm-3">
@@ -70,7 +70,7 @@
                   <div class="solu_title">
                     <h3> Gossip n°<%= index + 1 %> - <%= gossip.title %></h3>
                   </div>
-                  <div class="solu_description">
+                  <div class="solu_description text-center">
                     <p> Ecrit par 
                       <%= gossip.user.first_name %> <%= gossip.user.last_name %>
                     </p>

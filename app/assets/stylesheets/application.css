@@ -35,6 +35,11 @@ h1, h2, h3, p {
   text-shadow: 0cap;
 }
 
+.button_to {
+  display:inline-flex;
+  align-items : center;
+}
+
 .nopoint {
   list-style-type: none;
 }
@@ -42,6 +47,7 @@ h1, h2, h3, p {
 .spec_btn {
   margin:5px;
 }
+
 
 .alert, .notice {
   text-align: center;
@@ -82,7 +88,7 @@ img {
   z-index: 1;
   overflow: hidden;
   min-width: 250px;
-  min-height: 300px;
+  min-height: 320px;
   transition: 1.5s;
 }
 

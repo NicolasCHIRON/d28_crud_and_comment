@@ -36,4 +36,11 @@ class GossipsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @gossip = Gossip.find(params['id'])
+    @gossip.destroy
+    flash[:notice] = 'Le gossip a bien été supprimé !'
+    redirect_to root_path
+  end
 end
