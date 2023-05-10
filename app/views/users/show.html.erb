@@ -15,7 +15,7 @@
             <p> Description : <%= @user.description %></p>
             <p> E-mail de contact : <%= @user.email %></p>
             <p> Age : <%= @user.age %></p>
-            <p> Ville : <%= @user.city.name %></p>
+            <p> <%= link_to "Ville : #{@user.city.name}", city_path(@user.city), class:"btn btn-success" %> </p>
             </div>
           </div>
         </div>
