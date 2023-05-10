@@ -10,10 +10,10 @@
               <h3> Vous êtes bien sur la page du potin n°<%= params[:id] %> </h3>
             </div>
             <div class="solu_description">
-              <p> Auteur du potin : <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></p>
-              <p><%= link_to "==> Clique ici pour plus d'informations sur l'auteur (sa vie, ses rêves, ...)", user_path(@gossip.user), class:"linkoff" %> </p>
-              <p> Titre du potin : <%= @gossip.title %></p>
-              <p> Contenu du potin : <%= @gossip.content %></p>
+              <h3> <%= @gossip.title %></h3>
+              <p class="font-weight-bold"> <%= @gossip.content %></p>
+              <p class="font-weight-bold"> Rédigé par <%= @gossip.user.first_name %> <%= @gossip.user.last_name %> qui habite à <%= @gossip.user.city.name %></p>
+              <p><%= link_to "Plus d'informations sur l'auteur (sa vie, ses rêves, ...)", user_path(@gossip.user), class:"btn btn-success" %> </p>
               <p> Date de création du potin : <%= @gossip.created_at %></p>
             </div>
           </div>
