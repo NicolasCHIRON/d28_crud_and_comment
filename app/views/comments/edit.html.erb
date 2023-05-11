@@ -1,2 +1,17 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<h1>Bienvenue dans la page pour éditer le commentaire n°<%= params['id'] %> du potin n°<%= params['gossip_id'] %> </h1>
+
+  <center>
+    <%= form_for @comment, url:gossip_comment_url do |f| %>
+
+      <div class="form-group">
+        <label>Commentaire</label>
+        <%= f.text_field :content, class: 'form-control' %>
+      </div>
+
+      <div class="form_group" data-turbo=false>
+        <button type="submit" class="btn btn-success"> Modifier le commentaire</button> 
+        
+      </div>
+
+    <% end %>
+  </center>

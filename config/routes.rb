@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: redirect('/gossips')
 
   resources :gossips do
-    resources :comments, except: [:show, :index]
+    resources :comments, except: [:show, :index, :new]
   end
 
   resources :users, only: [:show]

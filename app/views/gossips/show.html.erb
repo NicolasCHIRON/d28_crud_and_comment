@@ -50,7 +50,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= comment.user.first_name %> <%= comment.user.last_name %></h5>
             <p class="card-text"><%= comment.content %></p>
-            <%= button_to "Editer le commentaire",  edit_gossip_comment_path(@gossip), class:"solu_description spec_btn", method: :get %>
+            <%= button_to "Editer le commentaire",  edit_gossip_comment_path(@gossip, comment.id), class:"solu_description spec_btn", method: :get %>
           </div>
         </div>
       </div>
